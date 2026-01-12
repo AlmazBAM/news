@@ -1,6 +1,5 @@
-package com.bagmanovam.newsapp.ui.theme
+package com.bagmanovam.newsapp.manager.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

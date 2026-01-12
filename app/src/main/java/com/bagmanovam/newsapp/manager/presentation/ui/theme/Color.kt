@@ -1,4 +1,4 @@
-package com.bagmanovam.newsapp.ui.theme
+package com.bagmanovam.newsapp.manager.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
