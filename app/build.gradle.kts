@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -40,4 +41,11 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.bundles.koin)
+
+    implementation(libs.bundles.compose)
+
+    implementation(project(":core-ui"))
+    implementation(project(":core-navigation"))
+    implementation(project(":feature:news"))
+    implementation(project(":feature:setting"))
 }
