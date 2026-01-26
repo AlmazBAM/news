@@ -17,7 +17,7 @@ kotlin {
 
 gradlePlugin {
     plugins {
-        // Регистрируем ваши convention plugins
+
         register("androidApplication") {
             id = "news.android.application"
             implementationClass = "AndroidAppConventionPlugin"
