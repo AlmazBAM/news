@@ -6,3 +6,7 @@ plugins {
 android {
     namespace = "com.bagmanovam.news"
 }
+
+dependencies {
+    implementation(project(":domain"))
+}
