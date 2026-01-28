@@ -10,33 +10,53 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+val LightColorScheme = lightColorScheme(
+    primary = PurplePrimary,
+    onPrimary = White,
+
+    secondary = BluePrimary,
+    onSecondary = White,
+
+    background = Grey50,
+    onBackground = TextPrimaryLight,
+
+    surface = White,
+    onSurface = TextPrimaryLight,
+    surfaceVariant = Grey100,
+    onSurfaceVariant = TextSecondaryLight,
+
+    outline = Grey200,
+
+    error = ErrorLight,
+    onError = White
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+val DarkColorScheme = darkColorScheme(
+    primary = PurpleSecondary,
+    onPrimary = White,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    secondary = BlueSecondary,
+    onSecondary = Black,
+
+    background = DarkBackground,
+    onBackground = TextPrimaryDark,
+
+    surface = DarkSurface,
+    onSurface = TextPrimaryDark,
+    surfaceVariant = DarkSurfaceVariant,
+    onSurfaceVariant = TextSecondaryDark,
+
+    outline = DarkDivider,
+
+    error = ErrorDark,
+    onError = Black
 )
 
 @Composable
 fun NewsAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
