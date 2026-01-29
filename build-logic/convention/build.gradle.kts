@@ -46,6 +46,11 @@ gradlePlugin {
             id = "news.android.data"
             implementationClass = "AndroidDataConventionPlugin"
         }
+
+        register("jvmLibrary") {
+            id = "news.jvm.library"
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
     }
 }
 

@@ -120,6 +120,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 news-android-application = { id = "news.android.application" }
 news-android-application-compose = { id = "news.android.application.compose" }
 news-android-library = { id = "news.android.library" }
+news-jvm-library = { id = "news.jvm.library" }
 news-android-library-compose = { id = "news.android.library.compose" }
 news-android-feature-api = { id = "news.android.feature.api" }
 news-android-feature-impl = { id = "news.android.feature.impl" }

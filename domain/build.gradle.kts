@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm")
+    alias(libs.plugins.news.jvm.library)
     alias(libs.plugins.kotlin.serialization)
 }
 
