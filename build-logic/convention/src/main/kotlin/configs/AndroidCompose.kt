@@ -3,6 +3,7 @@ package configs
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
+import kotlin.text.get
 
 internal fun Project.configureAndroidCompose(
     commonExtension: CommonExtension<*, *, *, *, *, *>
@@ -15,12 +16,13 @@ internal fun Project.configureAndroidCompose(
         }
 
         dependencies {
-            add("implementation", platform(libs.findLibrary("androidx-compose-bom").get()))
+            val bom = libs.findLibrary("androidx-compose-bom").get()
+            "implementation"(platform(bom))
             addBundle(libs, "compose")
-            add("debugImplementation", libs.findLibrary("androidx-compose-ui-tooling").get())
-            add("debugImplementation", libs.findLibrary("androidx-compose-ui-test-manifest").get())
-            add("androidTestImplementation", platform(libs.findLibrary("androidx-compose-bom").get()))
-            add("androidTestImplementation", libs.findLibrary("androidx-compose-ui-test-junit4").get())
+            "debugImplementation"(libs.findLibrary("androidx-compose-ui-tooling").get())
+            "debugImplementation"(libs.findLibrary("androidx-compose-ui-test-manifest").get())
+            "androidTestImplementation"(platform(libs.findLibrary("androidx-compose-bom").get()))
+            "androidTestImplementation"(libs.findLibrary("androidx-compose-ui-test-junit4").get())
         }
     }
 }
