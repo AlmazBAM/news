@@ -8,7 +8,8 @@
     <string name="what_interests_you">What interests you?</string>
     <string name="add_subscription">Add subscription</string>
     <string name="add_subscription_button">Add Subscription</string>
-    <string name="subscriptions_label">Subscriptions (%1$d)</string>
+    <string name="subscriptions_label">SUBSCRIPTIONS (%1$d)</string>
+    <string name="articles_label">ARTICLES (%1$d)</string>
     <string name="no_subscriptions">No subscriptions</string>
     <string name="image_for_article">Image for article %1$s</string>
     <string name="read_article">Read article</string>
