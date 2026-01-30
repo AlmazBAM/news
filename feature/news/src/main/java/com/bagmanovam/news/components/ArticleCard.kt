@@ -48,7 +48,7 @@ fun ArticleCard(
         ) { onArticleClick(article) },
         elevation = CardDefaults.elevatedCardElevation(defaultElevation = 8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
+            containerColor = MaterialTheme.colorScheme.surface
         )
     ) {
         article.imageUrl?.let { imageUrl ->
