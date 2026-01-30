@@ -1,5 +1,6 @@
 package com.bagmanovam.news.components
 
+import android.content.Intent
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import coil3.compose.AsyncImage
 import com.bagmanovam.domain.model.Article
 import com.bagmanovam.news.R
@@ -112,7 +114,9 @@ fun ArticleCard(
             Button(
                 modifier = Modifier.weight(1f),
                 onClick = {
-
+                    Intent(Intent.ACTION_VIEW, article.url.toUri()).also {
+                        context.startActivity(it)
+                    }
                 }
             ) {
                 Icon(
@@ -125,7 +129,12 @@ fun ArticleCard(
             Button(
                 modifier = Modifier.weight(1f),
                 onClick = {
-
+                    Intent(Intent.ACTION_SEND).apply {
+                        type = "text/plain"
+                        putExtra(Intent.EXTRA_TEXT, "${article.title}\n\n${article.url}")
+                    }.also {
+                        context.startActivity(it)
+                    }
                 }
             ) {
                 Icon(
