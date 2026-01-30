@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.news.android.application)
     alias(libs.plugins.news.android.application.compose)
@@ -18,6 +20,11 @@ android {
             isMinifyEnabled = false
             isShrinkResources = false
             buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+            buildConfigField(
+                "String",
+                "NEWS_API_KEY",
+                gradleLocalProperties(rootDir, providers).getProperty("NEWS_API_KEY")
+            )
         }
         release {
             isMinifyEnabled = true
@@ -27,6 +34,11 @@ android {
                 "proguard-rules.pro"
             )
             buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+            buildConfigField(
+                "String",
+                "NEWS_API_KEY",
+                gradleLocalProperties(rootDir, providers).getProperty("NEWS_API_KEY")
+            )
         }
     }
 }
@@ -37,6 +49,7 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:data"))
     implementation(project(":core:domain"))
+    implementation(project(":core:common"))
     implementation(project(":feature:news"))
     implementation(project(":feature:setting"))
 }

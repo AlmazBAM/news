@@ -1,4 +1,4 @@
-package com.bagmanovam.data.internet
+package com.bagmanovam.data.internet.util
 
 
 import com.bagmanovam.common.domain.NetworkError
